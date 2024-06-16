@@ -6,10 +6,6 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return appBar();
-  }
-
-  AppBar appBar() {
     return AppBar(
       title: const Text(
         'Breakfast',
@@ -56,6 +52,5 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
