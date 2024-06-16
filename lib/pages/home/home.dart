@@ -1,8 +1,7 @@
-// ignore_for_file: unnecessary_this
-
 import 'package:fitness/models/category_model.dart';
 import 'package:fitness/models/diet_model.dart';
 import 'package:fitness/models/popular_model.dart';
+import 'package:fitness/pages/home/widgets/header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -31,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     _getInitialInfo();
 
     return Scaffold(
-      appBar: appBar(),
+      appBar: const Header(),
       backgroundColor: Colors.white,
       body: ListView(
         children: [
@@ -118,7 +117,7 @@ class _HomePageState extends State<HomePage> {
         SizedBox(
           height: 120,
           child: ListView.separated(
-            itemCount: this.categories.length,
+            itemCount: categories.length,
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20, right: 20),
             separatorBuilder: (context, index) => const SizedBox(
@@ -326,52 +325,6 @@ class _HomePageState extends State<HomePage> {
         ),
         const SizedBox(
           height: 40,
-        )
-      ],
-    );
-  }
-
-  AppBar appBar() {
-    return AppBar(
-      title: const Text(
-        'Breakfast',
-        style: TextStyle(
-            color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
-      ),
-      backgroundColor: Colors.white,
-      elevation: 0.0,
-      centerTitle: true,
-      leading: GestureDetector(
-        onTap: () {},
-        child: Container(
-          margin: const EdgeInsets.all(10),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              color: const Color(0xffF7F8F8),
-              borderRadius: BorderRadius.circular(10)),
-          child: SvgPicture.asset(
-            'assets/icons/Arrow - Left 2.svg',
-            height: 20,
-            width: 20,
-          ),
-        ),
-      ),
-      actions: [
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            margin: const EdgeInsets.all(10),
-            alignment: Alignment.center,
-            width: 37,
-            decoration: BoxDecoration(
-                color: const Color(0xffF7F8F8),
-                borderRadius: BorderRadius.circular(10)),
-            child: SvgPicture.asset(
-              'assets/icons/dots.svg',
-              height: 5,
-              width: 5,
-            ),
-          ),
         )
       ],
     );
